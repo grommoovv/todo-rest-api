@@ -1,6 +1,7 @@
 package main
 
 import (
+	"github.com/spf13/viper"
 	"log"
 	todo "todo-rest-api"
 	"todo-rest-api/internal/handler"
@@ -20,7 +21,7 @@ func main() {
 
 	srv := new(todo.Server)
 
-	if err := srv.Run("8080", handlers.InitRoutes()); err != nil {
+	if err := srv.Run(viper.GetString("8000"), handlers.InitRoutes()); err != nil {
 		log.Fatalf("error occured while running http server: %s", err.Error())
 	}
 }
