@@ -1,8 +1,11 @@
 package main
 
 import (
+	"github.com/joho/godotenv"
+	_ "github.com/lib/pq"
+	"github.com/sirupsen/logrus"
 	"github.com/spf13/viper"
-	"log"
+	"os"
 	todo "todo-rest-api"
 	"todo-rest-api/internal/handler"
 	"todo-rest-api/internal/repository"
